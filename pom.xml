@@ -16,6 +16,7 @@
         <junit.version>4.12</junit.version>
         <java.target.version>1.8</java.target.version>
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+        <undertow.core.version>1.4.20.Final</undertow.core.version>
     </properties>
 
     <dependencies>
@@ -36,6 +37,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.undertow/undertow-core -->
+        <dependency>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-core</artifactId>
+            <version>${undertow.core.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
