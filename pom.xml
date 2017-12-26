@@ -18,6 +18,7 @@
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <undertow.core.version>1.4.20.Final</undertow.core.version>
         <commons.cli.version>1.4</commons.cli.version>
+        <pippo.version>1.7.0</pippo.version>
     </properties>
 
     <dependencies>
@@ -53,6 +54,17 @@
             <version>${commons.cli.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/ro.pippo/pippo-core -->
+        <dependency>
+            <groupId>ro.pippo</groupId>
+            <artifactId>pippo-core</artifactId>
+            <version>${pippo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ro.pippo</groupId>
+            <artifactId>pippo-undertow</artifactId>
+            <version>${pippo.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
