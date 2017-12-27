@@ -4,6 +4,7 @@ import cloud.dqn.models.DataResponse;
 import cloud.dqn.models.ExceptionResponse;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import kotlin.jvm.Throws;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,6 +14,10 @@ public class Datasource {
     private HikariConfig hikariConfig;
     private HikariDataSource hikariDataSource;
 
+    /**
+     * @throws org.postgresql.util.PSQLException if connection is refused
+     * @param hikariConfig
+     */
     public Datasource(
             HikariConfig hikariConfig
     ) {
@@ -64,6 +69,7 @@ public class Datasource {
     // TODO VALIDATIONS FOR PARAMETERS
     public static DataResponse<HikariConfig> configFactory(
             String poolName,
+            String dataSourceClassName,
             String serverName,
             String portNumber,
             String databaseName,
@@ -75,8 +81,11 @@ public class Datasource {
         response.data.addDataSourceProperty("serverName", serverName);
         response.data.addDataSourceProperty("portNumber", portNumber);
         response.data.addDataSourceProperty("databaseName", databaseName);
-        response.data.addDataSourceProperty("user", user);
-        response.data.addDataSourceProperty("password", password);
+        // response.data.addDataSourceProperty("user", user);
+        response.data.setUsername(user);
+        // response.data.addDataSourceProperty("password", password);
+        response.data.setPassword(password);
+        response.data.setDataSourceClassName(dataSourceClassName);
         return response;
     }
 }
