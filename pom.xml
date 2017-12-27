@@ -19,6 +19,9 @@
         <undertow.core.version>1.4.20.Final</undertow.core.version>
         <commons.cli.version>1.4</commons.cli.version>
         <pippo.version>1.7.0</pippo.version>
+        <hikari.version>2.7.4</hikari.version>
+        <activejdbc.version>1.4.13</activejdbc.version>
+        <postgresql.version>42.1.4</postgresql.version>
     </properties>
 
     <dependencies>
@@ -65,6 +68,26 @@
             <artifactId>pippo-undertow</artifactId>
             <version>${pippo.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hikari.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.javalite/activejdbc -->
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>activejdbc</artifactId>
+            <version>${activejdbc.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
